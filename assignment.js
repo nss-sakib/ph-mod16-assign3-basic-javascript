@@ -2,7 +2,7 @@
 
 //1.Convert kilometer into meter
 function kilometerToMeter(distanceKm) {
-    if (typeof distanceKm != Number) {
+    if (typeof distanceKm != "number") {
         //Checking user input is numerical or not
         return "Enter a numerical value.";
     }
@@ -16,7 +16,7 @@ function kilometerToMeter(distanceKm) {
 
 //2.Calculate total budget for various item
 function budgetCalculator(watch, phone, laptop) {
-    if (typeof watch != Number || typeof phone != Number || typeof laptop != Number) {
+    if (typeof watch != "number" || typeof phone != "number" || typeof laptop != "number") {
         //Checking user input is numerical or not
         return "Enter numerical value for each item.";
     }
@@ -39,7 +39,7 @@ function budgetCalculator(watch, phone, laptop) {
 
 //3.Calculate total cost for hotel days
 function hotelCost(day) {
-    if (typeof day != Number) {
+    if (typeof day != "number") {
         //Checking user input is numerical or not
         return "Enter a numerical value.";
     }
@@ -68,7 +68,7 @@ function megaFriend(friendList) {
         var maxLength = 0;
         var maxLengthName;
         for (var i = 0; i < friendList.length; i++) {
-            if (typeof friendList[i] != String) {
+            if (typeof friendList[i] != "string") {
                 //Checking if there any friend name is not of string type
                 return "Check all of your friends name again. Every name must be of string type!";
             }
