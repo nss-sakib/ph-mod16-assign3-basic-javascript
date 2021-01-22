@@ -2,6 +2,10 @@
 
 //1.Convert kilometer into meter
 function kilometerToMeter(distanceKm) {
+    if (typeof distanceKm != Number) {
+        //Checking user input is numerical or not
+        return "Enter a numerical value.";
+    }
     if (distanceKm >= 0) {
         var distanceM = distanceKm * 1000;   //1 kilometer = 1000 meter
         return distanceM;
@@ -12,6 +16,10 @@ function kilometerToMeter(distanceKm) {
 
 //2.Calculate total budget for various item
 function budgetCalculator(watch, phone, laptop) {
+    if (typeof watch != Number || typeof phone != Number || typeof laptop != Number) {
+        //Checking user input is numerical or not
+        return "Enter numerical value for each item.";
+    }
     if (watch >= 0 && phone >= 0 && laptop >= 0) {
         if (Math.round(watch) == watch && Math.round(phone) == phone && Math.round(laptop) == laptop) {
             var watchPrice = watch * 50;    //Each watch price 50 taka
@@ -31,6 +39,10 @@ function budgetCalculator(watch, phone, laptop) {
 
 //3.Calculate total cost for hotel days
 function hotelCost(day) {
+    if (typeof day != Number) {
+        //Checking user input is numerical or not
+        return "Enter a numerical value.";
+    }
     if (day >= 0 && Math.round(day) == day) {
         var cost;
         if (day <= 10) {
@@ -56,12 +68,16 @@ function megaFriend(friendList) {
         var maxLength = 0;
         var maxLengthName;
         for (var i = 0; i < friendList.length; i++) {
+            if (typeof friendList[i] != String) {
+                //Checking if there any friend name is not of string type
+                return "Check all of your friends name again. Every name must be of string type!";
+            }
             //Checking if there any friend name is empty
             if (friendList[i].length != 0) {
-                //Checking if there any friend name containing numerical character
                 var splittedName = friendList[i].split("");
-                for(var j = 0; j < splittedName.length; j++){
-                    if(splittedName[j] >= "0" && splittedName[j] <= "9"){
+                for (var j = 0; j < splittedName.length; j++) {
+                    if (splittedName[j] >= "0" && splittedName[j] <= "9") {
+                        //Checking if there any friend name containing numerical character
                         return "Check all of your friends name again. None should contain numerical character!";
                     }
                 }
